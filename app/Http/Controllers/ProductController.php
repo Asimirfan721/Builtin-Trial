@@ -13,24 +13,28 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        // Validate the form data
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'category' => 'required|in:shirts,watches,jeans,shoes',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'description' => 'required|string',
             'price' => 'required|numeric',
-            'description' => 'required|string|max:1000',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category' => 'required|string',
         ]);
 
-        $imagePath = $request->file('image')->store('public/images');
+        // Handle the image upload
+        $imagePath = $request->file('image')->store('products', 'public');
 
-        Product::create([
-            'name' => $request->name,
-            'category' => $request->category,
-            'image' => 'storage/' . basename($imagePath),
-            'price' => $request->price,
-            'description' => $request->description,
+        // Create a new product and save it
+        $product = Product::create([
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'image' => $imagePath,
+            'category' => $validated['category'],
         ]);
 
-        return redirect()->route('product.create')->with('success', 'Product added successfully!');
+        // After creating the product, redirect to the respective category page
+        return redirect()->route('category', ['name' => $product->category])->with('success', 'Product added successfully!');
     }
 }
