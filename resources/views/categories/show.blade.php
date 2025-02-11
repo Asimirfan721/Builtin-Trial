@@ -12,8 +12,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     @foreach($products as $product)
                         <div class="border rounded-lg shadow-lg p-4">
-                            <!-- Display the image -->
-                            <img src="{{ asset('storage/' . $product->image) }}" class="w-full h-48 object-cover rounded-md" alt="{{ $product->name }}">
+                            <!-- Image with zoom effect -->
+                            <img src="{{ asset('storage/' . $product->image) }}" class="product-image w-full h-48 object-cover rounded-md" alt="{{ $product->name }}">
 
                             <h4 class="mt-2 font-semibold">{{ $product->name }}</h4>
                             <p class="text-gray-600 text-sm">{{ $product->description }}</p>
@@ -29,3 +29,14 @@
         </div>
     </div>
 </x-app-layout>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevatezoom.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.product-image').elevateZoom({
+            zoomType: "lens",
+            lensShape: "round",
+            lensSize: 200
+        });
+    });
+</script>
