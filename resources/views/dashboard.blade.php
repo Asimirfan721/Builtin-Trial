@@ -30,8 +30,7 @@
                 <a href="{{ route('category.show', 'shoes') }}" class="block text-center bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition">
                     Shoes
                 </a>
-                
-            </div>
+                </div>
         </div>
     </div>
 </x-app-layout>

@@ -12,10 +12,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     @foreach($products as $product)
                         <div class="border rounded-lg shadow-lg p-4">
-                            <img src="{{ asset($product->image) }}" class="w-full h-48 object-cover rounded-md" alt="{{ $product->name }}">
+                            <!-- Display the image -->
+                            <img src="{{ asset('storage/' . $product->image) }}" class="w-full h-48 object-cover rounded-md" alt="{{ $product->name }}">
+
                             <h4 class="mt-2 font-semibold">{{ $product->name }}</h4>
                             <p class="text-gray-600 text-sm">{{ $product->description }}</p>
                             <p class="font-bold text-lg mt-2">${{ $product->price }}</p>
+
                             <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-3 hover:bg-blue-600 transition">
                                 Add to Cart
                             </button>
