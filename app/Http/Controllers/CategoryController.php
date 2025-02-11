@@ -10,7 +10,6 @@ class CategoryController extends Controller {
         if (!in_array($name, $validCategories)) {
             abort(404);
         }
-
         $products = Product::where('category', $name)->get();
         return view('categories.show', compact('products', 'name'));
     }
