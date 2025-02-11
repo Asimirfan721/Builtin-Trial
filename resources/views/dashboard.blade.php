@@ -17,7 +17,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                 <a href="{{ route('product.create') }}" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
     Add Product
-</a>
+                </a>
                 <a href="{{ route('category.show', 'shirts') }}" class="block text-center bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition">
                     Shirts
                 </a>
