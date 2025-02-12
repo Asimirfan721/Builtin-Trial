@@ -34,6 +34,29 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+
+            <!-- Buttons Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <a href="{{ route('product.create') }}" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+    Add Product
+</a>
+                <a href="{{ route('category.show', 'shirts') }}" class="block text-center bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition">
+                    Shirts
+                </a>
+                <a href="{{ route('category.show', 'watches') }}" class="block text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition">
+                    Watches
+                </a>
+                <a href="{{ route('category.show', 'jeans') }}" class="block text-center bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition">
+                    Jeans
+                </a>
+                <a href="{{ route('category.show', 'shoes') }}" class="block text-center bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition">
+                    Shoes
+                </a>
+                
+            </div>
+>>>>>>> parent of bc86feb (migrations)
         </div>
     </div>
 </x-app-layout>
