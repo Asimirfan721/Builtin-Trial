@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
 
@@ -69,7 +69,7 @@
                                     <img
                                         src="https://laravel.com/assets/img/welcome/docs-light.svg"
                                         alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-center object-contain drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
+                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
                                         onerror="
                                             document.getElementById('screenshot-container').classList.add('!hidden');
                                             document.getElementById('docs-card').classList.add('!row-span-1');
@@ -80,7 +80,7 @@
                                     <img
                                         src="https://laravel.com/assets/img/welcome/docs-dark.svg"
                                         alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-center object-contain drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
+                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
                                     />
                                     <div
                                         class="absolute -bottom-16 -left-16 h-40 w-[calc(100%_+_8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
@@ -166,7 +166,7 @@
                         </div>
                     </main>
 
-                    <footer class="py-6 text-center text-sm text-black dark:text-white/70">
+                    <footer class="py-06 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </footer>
                 </div>
