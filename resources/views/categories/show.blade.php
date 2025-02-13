@@ -1,42 +1,37 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Category: ') . ucfirst($name) }}
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <h3 class="text-lg font-semibold mb-4">Available Products</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    @foreach($products as $product)
-                        <div class="border rounded-lg shadow-lg p-4">
-                            <!-- Image with zoom effect -->
-                            <img src="{{ asset('storage/' . $product->image) }}" class="product-image w-full h-48 object-cover rounded-md" alt="{{ $product->name }}">
-
-                            <h4 class="mt-2 font-semibold">{{ $product->name }}</h4>
-                            <p class="text-gray-600 text-sm">{{ $product->description }}</p>
-                            <p class="font-bold text-lg mt-2">${{ $product->price }}</p>
-
-                            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-3 hover:bg-blue-600 transition">
-                                Add to Cart
-                            </button>
-                        </div>
-                    @endforeach
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    {{ __("You're logged in!") }}
                 </div>
+            </div>
+
+            <!-- Buttons Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <a href="{{ route('product.create') }}" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                    Add Product
+                </a>
+                <a href="{{ route('category.show', 'shirts') }}" class="block text-center bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition">
+                    Shirts
+                </a>
+                <a href="{{ route('category.show', 'watches') }}" class="block text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition">
+                    Watches
+                </a>
+                <a href="{{ route('category.show', 'jeans') }}" class="block text-center bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition">
+                    Jeans
+                </a>
+                <a href="{{ route('category.show', 'shoes') }}" class="block text-center bg-yellow-500 text-white py-3 rounded-lg hover:bg-yellow-600 transition">
+                    Shoes
+                </a>
+                
             </div>
         </div>
     </div>
 </x-app-layout>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevatezoom.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.product-image').elevateZoom({
-            zoomType: "lens",
-            lensShape: "round",
-            lensSize: 200
-        });
-    });
-</script>
